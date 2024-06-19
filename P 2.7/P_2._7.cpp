@@ -4,12 +4,14 @@
 
 using namespace std;
 
+// Шаблон(Струтура) для внесения информации о студенте
 struct Student{
     string fullname;
     int aig, dm, sdia;
     Student(string name, int aigGrade, int dmGrade, int sdiaGrade): fullname(name), aig(aigGrade), dm(dmGrade), sdia(sdiaGrade) {}
 };
 
+// Функция проверки успеваемости студента по всем предметам
 vector<Student> GetSuccess(const vector<Student>& students) 
 {
     vector<Student> StudentsSuccess;
@@ -30,7 +32,6 @@ int main()
 
     cout << "Практика 7 | Вариант 7\r\n\r\n";
 
-    // Создаем вектор студентов
     vector<Student> students { 
         Student("Иванов Иван Иванович", 60, 70, 80),
         Student("Петров Петр Дмитриевич", 40, 50, 60),
@@ -39,9 +40,8 @@ int main()
     };
 
     
-    vector<Student> successfulStudents = GetSuccess(students); // Получаем список студентов, успевающих по всем дисциплинам
+    vector<Student> successfulStudents = GetSuccess(students);
 
-    // Выводим список успевающих студентов
     cout << "Список студентов, успевающих по всем дисциплинам:\n";
     for (const Student& student : successfulStudents) {
         cout << student.fullname << endl;
